@@ -5,7 +5,9 @@ export default function TOC() {
     <div id="wd-toc">
       <ul>
         <li>
-            <Link href="/labs" id="wd-home-link">Home</Link>
+          <Link href="/labs" id="wd-home-link">
+            Home
+          </Link>
         </li>
         <li>
           <Link href="/labs/lab1">Lab 1</Link>
@@ -17,7 +19,7 @@ export default function TOC() {
           <Link href="/labs/lab3">Lab 3</Link>
         </li>
         <li>
-            <Link href="/labs/lab4">Lab 4</Link>
+          <Link href="/labs/lab4">Lab 4</Link>
         </li>
         <li>
           <Link href="/labs/lab5">Lab 5</Link>
@@ -28,13 +30,13 @@ export default function TOC() {
           </Link>
         </li>
         <li>
-        <Link href="/" id="wd-kambaz-link">
-          Kambaz
-        </Link>
-      </li>
+          <Link href="/" id="wd-kambaz-link">
+            Kambaz
+          </Link>
+        </li>
       </ul>
       <br />
-      Try to learn something about everything and everything about something - Thomas Henry Huxley
+      Elaine Mo
     </div>
   );
 }
