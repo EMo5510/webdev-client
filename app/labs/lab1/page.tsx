@@ -22,7 +22,6 @@ export default function Lab1() {
       <HighlightedParagraphLab />
       <HighlightedBoxLab />
       <AnchorTag />
-      {/* do the next exercise here */}
     </div>
   );
 }

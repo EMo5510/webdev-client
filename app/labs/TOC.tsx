@@ -5,7 +5,7 @@ export default function TOC() {
     <div id="wd-toc">
       <ul>
         <li>
-            <Link href="/labs">Home</Link>
+            <Link href="/labs" id="wd-home-link">Home</Link>
         </li>
         <li>
           <Link href="/labs/lab1">Lab 1</Link>
@@ -27,6 +27,11 @@ export default function TOC() {
             Chapter 1
           </Link>
         </li>
+        <li>
+        <Link href="/" id="wd-kambaz-link">
+          Kambaz
+        </Link>
+      </li>
       </ul>
       <br />
       Try to learn something about everything and everything about something - Thomas Henry Huxley
