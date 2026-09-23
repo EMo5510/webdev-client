@@ -34,9 +34,10 @@ export default function TOC() {
             Kambaz
           </Link>
         </li>
+        <li>
+          Elaine Mo
+        </li>
       </ul>
-      <br />
-      Elaine Mo
     </div>
   );
 }
