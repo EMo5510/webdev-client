@@ -37,6 +37,9 @@ export default function TOC() {
         <li>
           Elaine Mo
         </li>
+        <li>
+          <Link href="https://github.com/EMo5510/webdev-client">Github</Link>
+        </li>
       </ul>
     </div>
   );
