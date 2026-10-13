@@ -4,11 +4,33 @@ import Lesson from "./Lesson";
 export default function Modules() {
   return (
     <div>
-      <button>Collapse All</button> <button>View Progress</button>{" "}
-      <select defaultValue="publish-all">
-        <option value="publish-all">Publish All</option>
-      </select>{" "}
-      <button>+ Module</button>
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          Collapse All
+        </button>
+        <button
+          type="button"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          View Progress
+        </button>
+        <select
+          defaultValue="publish-all"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          <option value="publish-all">Publish All</option>
+        </select>
+        <button
+          type="button"
+          className="rounded border border-red-600 bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
+        >
+          + Module
+        </button>
+      </div>
+      {/* ...Module / Lesson tree... */}
       <ul id="wd-modules">
         <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
           <Lesson title="LEARNING OBJECTIVES">
@@ -33,13 +55,25 @@ export default function Modules() {
         </Module>
         <Module title="Week 2">
           <Lesson title="LEARNING OBJECTIVES">
-            <li className="wd-content-item">Learn how to create user interfaces with HTML</li>
+            <li className="wd-content-item">
+              Learn how to create user interfaces with HTML
+            </li>
           </Lesson>
         </Module>
         <Module title="Week 3">
           <Lesson title="LEARNING OBJECTIVES">
             <li className="wd-content-item">CSS Styling</li>
           </Lesson>
+        </Module>
+        <Module title="Final">
+          <Lesson title="LEARNING OBJECTIVES">
+            <li className="wd-content-item">
+              Review all content
+            </li>
+          </Lesson>
+        </Module>
+        <Module title="Sample module (AI)">
+          <Lesson title="Sample lesson (AI)" />
         </Module>
       </ul>
     </div>
