@@ -1,4 +1,5 @@
 import Link from "next/link";
+import * as db from "../../../../database";
 
 export default async function AssignmentEditor({
   params,
@@ -6,6 +7,7 @@ export default async function AssignmentEditor({
   params: Promise<{ cid: string; aid: string }>;
 }) {
   const { cid, aid } = await params;
+  const assignment = db.assignments.find((a) => a._id === aid);
   return (
     <div id="wd-assignments-editor" className="max-w-3xl">
       <label htmlFor="wd-name" className="mb-1 block font-semibold">
@@ -13,16 +15,19 @@ export default async function AssignmentEditor({
       </label>
       <input
         id="wd-name"
-        defaultValue={aid}
+        defaultValue={assignment?.title ?? ""}
         className="mb-4 w-full rounded border border-neutral-300 px-3 py-2"
       />
+      <p id="wd-assignment-id" className="mb-4 text-sm text-neutral-600">
+        Assignment id: {aid}
+      </p>
       <label htmlFor="wd-description" className="mb-1 block font-semibold">
         Description
       </label>
       <textarea
         id="wd-description"
         rows={5}
-        defaultValue="The assignment is available online Submit a link to the landing page of"
+        defaultValue={assignment?.description ?? ""}
         className="mb-4 w-full rounded border border-neutral-300 px-3 py-2"
       />
 
@@ -36,7 +41,7 @@ export default async function AssignmentEditor({
         <div className="col-span-12 md:col-span-9">
           <input
             id="wd-points"
-            defaultValue={100}
+            defaultValue={assignment?.points ?? 100}
             className="w-full rounded border border-neutral-300 px-3 py-2"
           />
         </div>
@@ -160,7 +165,7 @@ export default async function AssignmentEditor({
           </label>
           <input
             type="date"
-            defaultValue="2024-05-13"
+            defaultValue={assignment?.due}
             min="1900-01-01"
             max="2026-12-31"
             id="wd-due-date"
@@ -176,7 +181,7 @@ export default async function AssignmentEditor({
               </label>
               <input
                 type="date"
-                defaultValue="2024-05-06"
+                defaultValue={assignment?.available}
                 min="1900-01-01"
                 max="2026-12-31"
                 id="wd-available-from"
