@@ -1,13 +1,11 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { ReactNode, useState } from "react";
+import { useParams } from "next/navigation";
 import { FaAlignJustify } from "react-icons/fa6";
 import CourseNavigation from "./Navigation";
 import Breadcrumb from "./Breadcrumb";
 import { useCoursesStore } from "../../store/coursesStore";
-import { useEnrollmentsStore } from "../../store/enrollmentsStore";
-import { useAccountContext } from "../../account/AccountContext";
 
 export default function CoursesLayout({
   children,
@@ -19,20 +17,6 @@ export default function CoursesLayout({
   const courses = useCoursesStore((state) => state.courses);
   const course = courses.find((c) => c._id === courseId);
   const [showCourseNav, setShowCourseNav] = useState(true);
-  const router = useRouter();
-  const { currentUser } = useAccountContext();
-  const enrolled = useEnrollmentsStore((state) =>
-    state.enrollments.some(
-      (e) => e.user === currentUser?._id && e.course === courseId,
-    ),
-  );
-
-  // protect the course route: only enrolled users may view it
-  useEffect(() => {
-    if (!enrolled) router.replace("/dashboard");
-  }, [enrolled, router]);
-
-  if (!enrolled) return null;
 
   return (
     <div id="wd-courses">

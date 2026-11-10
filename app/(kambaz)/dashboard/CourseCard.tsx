@@ -25,10 +25,6 @@ export default function CourseCard({
       <Link
         href={`/courses/${course._id}/home`}
         className="wd-dashboard-course-link block text-neutral-900 no-underline"
-        onClick={(event) => {
-          // only enrolled users can open a course; otherwise stay on the Dashboard
-          if (!enrolled) event.preventDefault();
-        }}
       >
         <Image
           src={course.image}
